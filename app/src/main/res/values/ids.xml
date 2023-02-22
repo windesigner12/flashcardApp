@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="linearLayout" type="id" />
+    <item name="reponse1" type="id" />
+    <item name="reponse2" type="id" />
+    <item name="reponse3" type="id" />
+    <item name="reponse4" type="id" />
+</resources>
