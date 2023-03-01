@@ -63,6 +63,7 @@
 
 
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout"
@@ -122,5 +123,42 @@
         android:layout_marginTop="84dp"
         android:textColor="@color/Green"
         tools:text="Total Questions" />
+
+
+
+
+    <ImageButton
+        android:id="@+id/eyesonimgb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="183dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="181dp"
+        android:layout_marginBottom="22dp"
+        android:minHeight="48dp"
+        android:backgroundTint="@color/white"
+        app:srcCompat="@drawable/ic_baseline_visibility_24"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+
+    <ImageButton
+        android:id="@+id/eyesoffimgb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="183dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="181dp"
+        android:layout_marginBottom="22dp"
+        app:srcCompat="@drawable/ic_baseline_visibility_off_24"
+        android:visibility="invisible"
+        android:backgroundTint="@color/white"/>
 
 </RelativeLayout>

@@ -6,10 +6,12 @@ import androidx.cardview.widget.CardView;
 import android.app.AlertDialog;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -21,6 +23,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView totalQuestionTextView;
     Button ansA, ansB, ansC;
     Button submitBtn;
+
+    ImageButton eyesOn;
+    ImageButton eyesOff;
+
+    LinearLayout layout;
+
 
 
     int score = 0;
@@ -46,7 +54,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ansB = findViewById(R.id.reponse2);
         ansC = findViewById(R.id.reponse3);
 
+        eyesOn = findViewById(R.id.eyesonimgb);
+        eyesOff = findViewById(R.id.eyesoffimgb);
+
+
         submitBtn = findViewById(R.id.submitBtn);
+
+        layout = findViewById(R.id.linearLayout);
 
 
         questionCardView.setOnClickListener(new View.OnClickListener() {
@@ -77,12 +91,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         loadNewQuestion();
 
+      eyesOn.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+              eyesOn.setVisibility(View.INVISIBLE);
+              eyesOff.setVisibility(View.VISIBLE);
+              layout.setVisibility(View.INVISIBLE);
+
+          }
+      });
+
+        eyesOff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                eyesOn.setVisibility(View.VISIBLE);
+                eyesOff.setVisibility(View.INVISIBLE);
+                layout.setVisibility(View.VISIBLE);
+            }
+        });
+
 
     }
 
     @Override
     public void onClick(View view) {
+
         Button clickedButton = (Button) view;
+
         ansA.setBackgroundColor(Color.GRAY);
         ansB.setBackgroundColor(Color.GRAY);
         ansC.setBackgroundColor(Color.GRAY);
@@ -111,6 +146,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return;
         }
 
+        ansA.setBackgroundColor(Color.BLUE);
+        ansB.setBackgroundColor(Color.BLUE);
+        ansC.setBackgroundColor(Color.BLUE);
+
         questionTextView.setText(QuestionsAnswers.question[currentQuestionIndex]);
         ansA.setText(QuestionsAnswers.choices[currentQuestionIndex][0]);
         ansB.setText(QuestionsAnswers.choices[currentQuestionIndex][1]);
@@ -120,6 +159,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     void finishQuiz(){
 
         String passStatus = " ";
+
         if(score > totalQuestion+0.60)
         {
             passStatus = "Passed";
