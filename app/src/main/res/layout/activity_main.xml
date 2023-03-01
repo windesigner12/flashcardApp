@@ -15,13 +15,13 @@
       app:cardCornerRadius="20dp"
       app:cardElevation="5dp"
       app:cardUseCompatPadding="true"
-      android:id="@+id/flascard_question_textview"
+      android:id="@+id/flascard_question_Cardview"
       android:layout_alignParentTop="true"
       android:layout_marginTop="150dp"
       >
 
       <TextView
-
+          android:id="@+id/flascard_question_textview"
           android:layout_width="wrap_content"
           android:layout_height="match_parent"
           android:text="Quel est le nom du dernier president assasiné sur le pouvoir en Haiti?"
@@ -35,27 +35,25 @@
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/flascard_reponse_Cardview"
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:layout_below="@+id/totalquestions"
+        android:layout_marginTop="69dp"
+        android:visibility="invisible"
         app:cardBackgroundColor="@color/Green"
         app:cardCornerRadius="20dp"
         app:cardElevation="5dp"
-        app:cardUseCompatPadding="true"
-        android:visibility="invisible"
-        android:id="@+id/flascard_reponse_textview"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="150dp"
-        >
+        app:cardUseCompatPadding="true">
 
         <TextView
-
+            android:id="@+id/flascard_reponse_textview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="SE Mr Jovenel Moise"
             android:gravity="center"
-            android:textSize="30dp"
+            android:text="SE Mr Jovenel Moise"
             android:textColor="@color/white"
-            />
+            android:textSize="30dp" />
     </androidx.cardview.widget.CardView>
 
 
@@ -63,12 +61,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout"
-        android:layout_below="@id/flascard_question_textview"
+        android:layout_below="@id/flascard_reponse_Cardview"
         android:gravity="center"
         android:orientation="vertical"
         android:layout_marginTop="40dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
 
         <Button
             android:id="@+id/reponse1"
@@ -95,14 +93,28 @@
             android:layout_marginBottom="10dp"/>
 
         <Button
-            android:id="@+id/reponse4"
-            android:layout_width="wrap_content"
+            android:id="@+id/submitBtn"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="reset quiz"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:visibility="invisible"/>
+            android:text="SUBMIT"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/Green"
+           />
+
+
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/totalquestions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="162dp"
+        android:layout_marginTop="84dp"
+        tools:text="Total Questions" />
 
 </RelativeLayout>
