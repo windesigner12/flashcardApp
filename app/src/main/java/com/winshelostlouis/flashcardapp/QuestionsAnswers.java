@@ -15,8 +15,8 @@ public class QuestionsAnswers {
             {"Google","Apple","Samsung"},
             {"Java","Kotlin","Notepad"},
             {"Facebook","Whatsapp","Instagram"},
-            {"Mathieu", "Sylveste", "Winshelo"},
-            {"24 HOurs", "48 Hours", "72 Hours"}
+            {"Mathieu", "Sylvestre", "Winshelo"},
+            {"3 Jours", "4 Jours", "1 Jours"}
 
     };
 
@@ -24,8 +24,8 @@ public class QuestionsAnswers {
             "Google",
             "Notepad",
             "Facebook",
-            "Sylveste",
-            "72 Hours"
+            "Saint Sylvestre",
+            "3 Jours"
     };
 
 }
