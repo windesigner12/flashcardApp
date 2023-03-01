@@ -4,18 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:backgroundTint="@color/white"
+    android:background="@color/white">
 
 
 
   <androidx.cardview.widget.CardView
+      android:id="@+id/flascard_question_Cardview"
       android:layout_width="match_parent"
       android:layout_height="200dp"
       app:cardBackgroundColor="@color/lightGreen"
       app:cardCornerRadius="20dp"
+      android:layout_below="@+id/totalquestions"
       app:cardElevation="5dp"
       app:cardUseCompatPadding="true"
-      android:id="@+id/flascard_question_Cardview"
       android:layout_alignParentTop="true"
       android:layout_marginTop="150dp"
       >
@@ -38,13 +41,15 @@
         android:id="@+id/flascard_reponse_Cardview"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_below="@+id/totalquestions"
-        android:layout_marginTop="69dp"
-        android:visibility="invisible"
         app:cardBackgroundColor="@color/Green"
         app:cardCornerRadius="20dp"
+        android:layout_below="@+id/totalquestions"
         app:cardElevation="5dp"
-        app:cardUseCompatPadding="true">
+        app:cardUseCompatPadding="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="150dp"
+        android:visibility="invisible"
+        >
 
         <TextView
             android:id="@+id/flascard_reponse_textview"
@@ -115,6 +120,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="162dp"
         android:layout_marginTop="84dp"
+        android:textColor="@color/Green"
         tools:text="Total Questions" />
 
 </RelativeLayout>

@@ -39,12 +39,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         questionTextView = findViewById(R.id.flascard_question_textview);
         responseTextView = findViewById(R.id.flascard_reponse_textview);
 
+        questionCardView = findViewById(R.id.flascard_question_Cardview);
+        responseCardView = findViewById(R.id.flascard_reponse_Cardview);
+
         ansA = findViewById(R.id.reponse1);
         ansB = findViewById(R.id.reponse2);
         ansC = findViewById(R.id.reponse3);
 
         submitBtn = findViewById(R.id.submitBtn);
 
+
+        questionCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                responseTextView.setText(QuestionsAnswers.correctAswers[currentQuestionIndex]);
+                responseCardView.setVisibility(View.VISIBLE);
+                questionCardView.setVisibility(view.INVISIBLE);
+            }
+        });
+
+        responseCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                responseCardView.setVisibility(view.INVISIBLE);
+                questionTextView.setText(QuestionsAnswers.question[currentQuestionIndex]);
+                questionCardView.setVisibility(view.VISIBLE);
+            }
+        });
 
         ansA.setOnClickListener(this);
         ansB.setOnClickListener(this);
