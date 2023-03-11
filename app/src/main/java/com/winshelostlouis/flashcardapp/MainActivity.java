@@ -3,13 +3,16 @@ package com.winshelostlouis.flashcardapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -29,13 +32,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     LinearLayout layout;
 
-
+    ImageView AddButton;
 
     int score = 0;
     int totalQuestion = QuestionsAnswers.question.length;
     int currentQuestionIndex = 0;
     String selectAnswer = "";
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +65,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         submitBtn = findViewById(R.id.submitBtn);
 
         layout = findViewById(R.id.linearLayout);
+
+        AddButton = findViewById(R.id.addIconButton);
+
+
 
 
         questionCardView.setOnClickListener(new View.OnClickListener() {
@@ -109,6 +117,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 layout.setVisibility(View.VISIBLE);
             }
         });
+
+        AddButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AddQuestion.class);
+                startActivity(intent);
+            }
+        });
+
 
 
     }
