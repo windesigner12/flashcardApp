@@ -1,6 +1,7 @@
 package com.winshelostlouis.flashcardapp;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
@@ -10,6 +11,23 @@ import java.util.UUID;
 
 @Entity
 public class Flashcard {
+
+    @Ignore
+    Flashcard(@NonNull String question, @NonNull String answer){
+        this.uuid = UUID.randomUUID().toString();
+        this.question = question;
+        this.answer= answer;
+
+    }
+
+
+    Flashcard(@NonNull String question, @NonNull String answer, @NonNull String wrongAnswer1, @NonNull String wrongAnswer2){
+        this.uuid = UUID.randomUUID().toString();
+        this.question = question;
+        this.answer= answer;
+        this.wrongAnswer1 = wrongAnswer1;
+        this.wrongAnswer2 = wrongAnswer2;
+    }
 
     @PrimaryKey
     @NonNull
@@ -47,27 +65,22 @@ public class Flashcard {
 
     public void setQuestion(@NonNull String question ){this.question = question;}
 
-    @Ignore
-    Flashcard(@NonNull String question, @NonNull String answer){
-        this.uuid = UUID.randomUUID().toString();
-        this.question = question;
-        this.answer= answer;
-        
-    }
-    
-    
-    Flashcard(@NonNull String question, @NonNull String answer, @NonNull String wrongAnswer1, @NonNull String wrongAnswer2){
-        this.uuid = UUID.randomUUID().toString();
-        this.question = question;
-        this.answer= answer;
-        this.wrongAnswer1 = wrongAnswer1;
-        this.wrongAnswer2 = wrongAnswer2;
-    }
+    @NonNull
+    public String getAnswer() {return answer;}
+
+    public void setAnswer(@NonNull String answer){this.answer = answer; }
+
+    @Nullable
+    public String getWrongAnswer1() {return wrongAnswer1;}
+
+    public void setWrongAnswer1(){ this.wrongAnswer1 = wrongAnswer1;}
+
+    @Nullable
+    public String getWrongAnswer2() {return wrongAnswer1;}
+
+    public void setWrongAnswer2(){ this.wrongAnswer2 = wrongAnswer2;}
 
 
-
-
-    
 }
 
 
